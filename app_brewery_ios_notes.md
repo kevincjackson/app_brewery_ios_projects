@@ -72,8 +72,17 @@ No. VC's will tell you 5 people already have your idea and are working on it - i
 - There are two methods that the computer accepts:
   1. Pin Method: Give it the the left, right, top, and bottom distance to the edge or margin.  Computer calculates the origin and size.
   2. Alignment method: give it the size (width & height) and the alignment (align center or the x and y edges)
-- Good method:
+- Containers - Good method:
   - Make container views (boxes) for every row.
   - Pin each row all around.
   - Color the containers background to test on different devices, make transparent (default color) when your done
   - Nest your objects in the containers by aligning or pinning.
+- Stackviews:
+  - Flexbox for iOS
+  - Choosable alignment like equal fill, or proportional fill
+  - How to:
+    - Usually choose equal fill, or play with the options (they're easy!)
+    - For proportional fill (ex: 0 key of the Apple calculator takes the space of two buttons)
+      1. Set equal width constraint on the children
+      2. Set multiplier of that equal width constraint to 1:2 (eg)
+      3. Set stack view to proportional fill

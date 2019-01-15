@@ -29,3 +29,5 @@ Example apps from the Udemy iOS course
   - Autolayout
 9. Layout Practice
   - Equal widths layout
+10. Stack View Calculator
+  - Recreates the Apple calculator widget using stack view
