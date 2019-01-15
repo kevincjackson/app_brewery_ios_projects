@@ -22,3 +22,6 @@ Example apps from the Udemy iOS course
   - Local data storage
   - Alerts
   - Heads Up Display using Objective-C Library
+7. Destini
+  - Choose your own text adventure game.
+  - Practice setting up App state.
