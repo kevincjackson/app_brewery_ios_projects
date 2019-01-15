@@ -15,3 +15,10 @@ Example apps from the Udemy iOS course
 5. Xylophone
   - Learn how to search for, implement, and learn a library feature.
   - Plays sound.
+  - Uses button tags to simplify handler / IBAction function
+6. Quizzler
+  - MVC pattern
+  - OO
+  - Local data storage
+  - Alerts
+  - Heads Up Display using Objective-C Library

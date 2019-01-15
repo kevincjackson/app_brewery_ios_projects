@@ -40,15 +40,29 @@ No. VC's will tell you 5 people already have your idea and are working on it - i
 - Useful for simplifying functions
 
 ## Copy / Pasting
-- Be very careful to identify braces. They are a huge source of bugs.
+- Be careful with braces. They are a huge source of bugs!
 
 ## Implementing New features
 - Overview
   - work from the specific to the general.
-  - get code samples to work, then learn about that code
+  - get code samples to work, *then* learn the technology
 - Start with <http://stackoverflow.com>. Cut and paste, and fiddle with the code until it works. Then read up on the docs to learn about the solution.
 - Next try <https://forums.developer.apple.com>. Another question and answer format.
 - Next try <https://developer.apple.com/reference>. Search is bad, but persevere and you could be rewarded with great docs. Note that a lot of code is Objective-C, so it's not a good starting point. It's better if you already have good code, and want to learn about it.
 
 ## Good Error Code Lookup
 <https://osstatus.com>
+
+## Alerts
+- Overview
+  - Same as a Javascript alert (popup)
+  - Shows a message to the user
+  - Is an interruption, use sparingly
+  - An alert has two **styles**:
+    1. Modal Alert: Popup in middle of screen
+    2. Action Sheet: Multiple options in the bottom of the screen
+  - You add **UIAlertActions** to the UIAlertController when you want a button to do something.
+  - You present the alert
+  - Docs:
+    - <https://developer.apple.com/documentation/uikit/uialertcontroller>
+    - <https://developer.apple.com/documentation/uikit/uialertaction>
