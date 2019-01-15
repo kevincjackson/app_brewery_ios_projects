@@ -25,3 +25,5 @@ Example apps from the Udemy iOS course
 7. Destini
   - Choose your own text adventure game.
   - Practice setting up App state.
+8. Dicee Layout
+  - Autolayout

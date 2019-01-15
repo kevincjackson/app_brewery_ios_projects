@@ -62,7 +62,18 @@ No. VC's will tell you 5 people already have your idea and are working on it - i
     1. Modal Alert: Popup in middle of screen
     2. Action Sheet: Multiple options in the bottom of the screen
   - You add **UIAlertActions** to the UIAlertController when you want a button to do something.
-  - You present the alert
+  - Your present the alert
   - Docs:
     - <https://developer.apple.com/documentation/uikit/uialertcontroller>
     - <https://developer.apple.com/documentation/uikit/uialertaction>
+
+## Autolayout
+- Ultimately, the computer is going to render a box and it needs to know the origin and the size (width & height)
+- There are two methods that the computer accepts:
+  1. Pin Method: Give it the the left, right, top, and bottom distance to the edge or margin.  Computer calculates the origin and size.
+  2. Alignment method: give it the size (width & height) and the alignment (align center or the x and y edges)
+- Good method:
+  - Make container views (boxes) for every row.
+  - Pin each row all around.
+  - Color the containers background to test on different devices, make transparent (default color) when your done
+  - Nest your objects in the containers by aligning or pinning.
