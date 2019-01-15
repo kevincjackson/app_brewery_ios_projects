@@ -27,3 +27,5 @@ Example apps from the Udemy iOS course
   - Practice setting up App state.
 8. Dicee Layout
   - Autolayout
+9. Layout Practice
+  - Equal widths layout
