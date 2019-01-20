@@ -86,3 +86,19 @@ No. VC's will tell you 5 people already have your idea and are working on it - i
       1. Set equal width constraint on the children
       2. Set multiplier of that equal width constraint to 1:2 (eg)
       3. Set stack view to proportional fill
+
+## Delegation & Protocol Pattern
+  - What: allows a child object to pass data to a parent object. It's a kind of OO lambda.
+  - A major feature is that ObjectA and ObjectB contain references to each other, and do not perpetually create new objects. An inefficient alternative would be ObjectA passes data to new instance of ObjectB, and Object B then creates a new ObjectA upon return!
+  - How to implement:
+    - ObjectA *prepares_a_segue* for ObjectB, and instantiates the segue.destination as ObjectB controller and assigns itself as ObjectB's delegate
+    ```
+    let ObjectB = segue.destination as! ObjectBController
+ObjectB.delegate = self
+  ```
+      Any data to be passed to be ObjectB gets assigned to ObjectB properties.
+    - ProtocolForB: contains a function(s) in which data can be passed in the methods. Think of the protocol as a lambda.
+    - ObjectB:
+      -Contains a delegate which is assigned as the optional ProtocolForB
+      -Whenever data needs to be passed ObjectB calls `delegate.protocal_method(data_to_be_passed)`
+      - ObjectB can `dismiss` itself, which automatically destroys itself, and sends the screen back to ObjectA

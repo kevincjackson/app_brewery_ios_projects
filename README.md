@@ -31,3 +31,10 @@ Example apps from the Udemy iOS course
   - Equal widths layout
 10. Stack View Calculator
   - Recreates the Apple calculator widget using stack view
+11. Clima
+  - How to use CocoaPods to manage and use open source code libraries.
+  - Learn about Networking & API calls
+  - JSON
+  - Core Location and GPS
+  - View Controllers Segues.
+  - Required! Get API Key from the website https://openweathermap.org/appid and insert into WeatherViewController
