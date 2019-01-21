@@ -1,0 +1,8 @@
+target 'BitcoinTicker' do
+  use_frameworks!
+  platform :ios, '10.0'
+
+  # Pods
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+end
