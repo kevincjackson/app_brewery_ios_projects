@@ -38,3 +38,5 @@ Example apps from the Udemy iOS course
   - Core Location and GPS
   - View Controllers Segues.
   - Required! Get API Key from the website https://openweathermap.org/appid and insert into WeatherViewController
+12. BitcoinTicker
+  - Practice using Cocopods, JSON, and API calls.
