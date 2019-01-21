@@ -40,3 +40,11 @@ Example apps from the Udemy iOS course
   - Required! Get API Key from the website https://openweathermap.org/appid and insert into WeatherViewController
 12. BitcoinTicker
   - Practice using Cocopods, JSON, and API calls.
+13. Flash Chat
+  - A What's App Chat Clone
+  - Use Google Firebase
+  - Use UITableView.
+  - Embed View Controllers in a Navigation Controller
+  - Use Segues.
+  - Modify native design components using custom .xib files.
+  - Use Grand Central Dispatch for async tasks.
