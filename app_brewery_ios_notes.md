@@ -102,3 +102,52 @@ ObjectB.delegate = self
       -Contains a delegate which is assigned as the optional ProtocolForB
       -Whenever data needs to be passed ObjectB calls `delegate.protocal_method(data_to_be_passed)`
       - ObjectB can `dismiss` itself, which automatically destroys itself, and sends the screen back to ObjectA
+
+## Closure Syntax
+All are equivalent
+```swift
+// Complete form
+{ (i: Int) -> Int in
+  return i + 1
+}
+
+// Return not required
+{ (i: Int) -> Int in
+  n + 1
+}
+
+// Use type inference
+{ (i) in
+  i + 1
+}
+
+// Use shorthand notation
+{ $0 + 1 }
+```
+Eg
+```swift
+// Full version
+[1, 2, 3].map({(i: Int) -> Int
+  return i + 1
+})
+
+// Shorthand version
+[1, 2, 3].map { $0 + 1 }
+```
+A function which takes a function in the last position can drop the final parenthesis.
+```swift
+// Long version
+calculate(a: Int, b: Int, {(x: Int, y: Int) -> Int in
+  return x + y
+})
+
+// Closure in parenthesis
+calculate(a: Int, b: Int, { $0 + 1 })
+
+// Trailing syntax version
+calculate(a: Int, b: Int) { $0 + 1 }
+```
+## Why Firebase?
+- Firebase is Google's NoSQL Realtime database.
+- From [codementor](https://www.codementor.io/cultofmetatron/when-you-should-and-shouldn-t-use-firebase-f62bo3gxv)
+  - "Firebase's realtime database is a very powerful tool for a limited scope. To know if your data is a good match for Firebase, simply ask yourself if you'd want to use a observable hash. If all you need is to react to the addition/update of items in a collection or object, Firebase is great. If you need extensive queries or have complex relational data, Firebase would be a poor choice for your main database. Still, it could still be an excellent component of a well balanced server side infrastructure."
