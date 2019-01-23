@@ -154,5 +154,7 @@ calculate(a: Int, b: Int) { $0 + 1 }
 
 ## Data Storage Options
 - UserDefaults
-  - Should be used for simple key value pairs, but can take any object
+  - Should be used for simple key value pairs
+  - Can take native collections, but not custom objects.
   - Methods: `set` & <name of type> like `string`
+- NSCoder
