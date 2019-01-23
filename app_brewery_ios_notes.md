@@ -151,3 +151,8 @@ calculate(a: Int, b: Int) { $0 + 1 }
 - Firebase is Google's NoSQL Realtime database.
 - From [codementor](https://www.codementor.io/cultofmetatron/when-you-should-and-shouldn-t-use-firebase-f62bo3gxv)
   - "Firebase's realtime database is a very powerful tool for a limited scope. To know if your data is a good match for Firebase, simply ask yourself if you'd want to use a observable hash. If all you need is to react to the addition/update of items in a collection or object, Firebase is great. If you need extensive queries or have complex relational data, Firebase would be a poor choice for your main database. Still, it could still be an excellent component of a well balanced server side infrastructure."
+
+## Data Storage Options
+- UserDefaults
+  - Should be used for simple key value pairs, but can take any object
+  - Methods: `set` & <name of type> like `string`
