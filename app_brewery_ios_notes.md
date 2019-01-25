@@ -157,4 +157,34 @@ calculate(a: Int, b: Int) { $0 + 1 }
   - Should be used for simple key value pairs
   - Can take native collections, but not custom objects.
   - Methods: `set` & <name of type> like `string`
-- NSCoder
+- Codable
+  - Same custom objects to Plist or JSON.
+  - Slow lookup. Keep file under 100k.
+- Keychain
+  - Store secure data
+- SQLite
+  - Handles large datasets
+  - Fast Search
+- FMDB
+  - iOS wrapper (pod) for SQLite
+- Core Data
+  - Object-oriented database
+  - Underneath is SQLite DB
+  - Language
+    - Entity = Class
+      - Codegen
+        - Class Definition - class automatically created
+        - Category Extension - add to automatically created Class
+        - None - you write your own class code
+    - Attribute = Property
+    - NSPersistentContainer = SQLite DB
+    - Context = temporary scratchpad used before saving
+- Realm
+  - Faster and easier database solution (than Core Data)
+
+## NSPredicate
+- Query Language
+- SQL Where clause meets regular expression
+- Uses natural language
+- Checkout this cheatsheet:
+<https://academy.realm.io/posts/nspredicate-cheatsheet/>
