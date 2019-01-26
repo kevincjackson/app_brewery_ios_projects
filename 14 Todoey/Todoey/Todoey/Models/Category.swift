@@ -12,7 +12,8 @@ import RealmSwift
 class Category: Object {
     
     @objc dynamic var name = ""
-    
+    @objc dynamic var color = UIColor.randomFlat.hexValue()
+
     // Realms has_many
     let items = List<Item>()
         

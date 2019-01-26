@@ -8,10 +8,12 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
 
     var todoItems: Results<Item>?
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // Set Database
     let realm = try! Realm()
@@ -25,9 +27,35 @@ class TodoListViewController: SwipeTableViewController {
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        title = selectedCategory!.name
+        let color = HexColor(selectedCategory!.color)!
+        updateNavBarColor(with: color)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        updateNavBarColor(with: UIColor(hexString: "1D9BF6")!)
+
+    }
+    
+    // MARK: - UI Update
+    func updateNavBarColor(with color: UIColor) {
+
+        if let navBar = navigationController?.navigationBar {
+            navBar.barTintColor = color
+            navBar.tintColor = FlatWhite()
+            navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: FlatWhite()]
+            
+            searchBar.barTintColor = color
+        }
     }
 
-    
     // MARK: - Tableview Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems?.count ?? 1
@@ -40,9 +68,16 @@ class TodoListViewController: SwipeTableViewController {
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
+            
+            let baseColor = selectedCategory!.color
+            let darkenPercentage = CGFloat(indexPath.row) / CGFloat(todoItems!.count);
+            let cellColor =  HexColor(baseColor)!.darken(byPercentage: darkenPercentage)!
+            cell.backgroundColor = cellColor
+            cell.textLabel?.textColor = ContrastColorOf(cellColor, returnFlat: true)
         }
         else {
             cell.textLabel?.text = "No items yet."
+            cell.backgroundColor = UIColor.randomFlat
         }
         
         return cell
@@ -60,7 +95,6 @@ class TodoListViewController: SwipeTableViewController {
                     
                     // Realm uses a delete method
                     // realm.delete(item)
-
                 }
             }
             catch {
