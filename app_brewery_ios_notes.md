@@ -180,7 +180,10 @@ calculate(a: Int, b: Int) { $0 + 1 }
     - NSPersistentContainer = SQLite DB
     - Context = temporary scratchpad used before saving
 - Realm
-  - Faster and easier database solution (than Core Data)
+  - Simpler API than CoreData
+  - Less lines of code
+  - Faster than CoreData
+  - Uses SQLite as well
 
 ## NSPredicate
 - Query Language
@@ -188,3 +191,21 @@ calculate(a: Int, b: Int) { $0 + 1 }
 - Uses natural language
 - Checkout this cheatsheet:
 <https://academy.realm.io/posts/nspredicate-cheatsheet/>
+
+## In App Purchases
+- Strategy
+  - Put 80% functionality free
+  - Put 20% behind pay well
+  - Example:
+- Purchase must be digital, not physical
+- Apple takes 30%.
+- Uses *StoreKit* framework
+- Must supply a `Restore purchase` button
+  - Save user data in UserDefaults
+  - Validate user data against Apple services
+
+## Handling Optionals
+- `!`: Use to catch logic errors
+- `guard` : Use to catch logic errors with a custom message
+- `if let` : Use when multiple allowed paths exist.
+- `??`: Use when multiple allowed paths exist, good for defaults
