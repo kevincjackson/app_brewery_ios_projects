@@ -58,9 +58,4 @@ Example apps from the Udemy iOS course
     - Structs versus Classes
     - External / Internal Parameters
     - Access Levels
-      - private - class only
-      - fileprivate - class + other classes in file
-      - internal / default - whole target / module
-      - public - for framework developers, other modules can see, but not override
-      - open - for frameworks developers, others modules can see, and override
     - Tuples
