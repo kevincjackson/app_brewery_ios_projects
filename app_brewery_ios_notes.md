@@ -209,3 +209,45 @@ calculate(a: Int, b: Int) { $0 + 1 }
 - `guard` : Use to catch logic errors with a custom message
 - `if let` : Use when multiple allowed paths exist.
 - `??`: Use when multiple allowed paths exist, good for defaults
+
+## Access Levels
+- private: class only
+- file private: all classes in the file
+- internal (default): project wide
+- public: other projects can use, but not override
+- open: other projects can use, and override.
+
+## Freelancing
+0. Dedicate 10-15 hours / week
+1. Personal Projects
+2. Fivr (not for money, but experience)
+3. Upwork
+
+## Best Developer Tools
+- Duet
+- Alfred
+- Momento, Chrome plugin
+- Cheatsheet
+- Canned Emails (Humor)
+
+## Color for Apps
+| Color | Mood |
+| - | - |
+| Red | Love, Energy, Intensity |
+| Yellow | Joy, Intellect, Attention |
+| Green | Freshness, Safety, Growth |
+| Blue | Stability, Trust, Serenity |
+| Purple | Royalty, Wealth, Feminity |
+
+| Scheme | Usage |
+| - | - |
+| Analogous | Harmonious for Main Interface, BG |
+| Complementary | Max Attention for Logo |
+| Split Complementary, Triadic | Moderate Attention for Logo |
+| Monochrome | Harmonious for Interfaces |
+
+Tools
+- <http://colorhunt.com> Curated collection of colors
+- <http://flatuicolors.com> iOS rainbow
+- <http://materialpalette.com> android rainbow
+- colorzilla: browser color sampler 
