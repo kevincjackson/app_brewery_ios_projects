@@ -246,8 +246,49 @@ calculate(a: Int, b: Int) { $0 + 1 }
 | Split Complementary, Triadic | Moderate Attention for Logo |
 | Monochrome | Harmonious for Interfaces |
 
-Tools
+## Color Tools
 - <http://colorhunt.com> Curated collection of colors
 - <http://flatuicolors.com> iOS rainbow
 - <http://materialpalette.com> android rainbow
-- colorzilla: browser color sampler 
+- colorzilla: browser color sampler
+
+## Typography
+- Serif (Dutch for line): More conservative, think law office
+  - Modularation (thick / thin) increases
+  - Subdivisions
+    - Old Style
+    - Traditional
+    - Modern
+    - Slab serif: Oddball, thick fonts used for poor resolution printing
+- San serif: More
+  - Modulation increases
+  - Subdivisions
+    - Grotesque
+    - Neo-Grotesque
+    - Humanist: Reads faster
+    - Geometric: Oddball, equidistant at all points
+- Combining
+  - Heading and body get opposing Serif and San-serif, or vice versa. Don't mix serif with serif, etc.
+  - Use two different fonts. Three is a stretch. Four is too many.
+  - Fonts have moods just like colors. Make sure the mood fits.
+  - Tips
+    - Match moods.
+    - Match time eras.
+    - Contrast serifs vs sans-serifs.
+    - Contrast weights.
+    - Don't ever use these:
+      - Comic sans
+      - papyrus
+      - kristen
+      - viner
+      - curlz
+
+## Typography Tools
+- WhatFont: browser font identifier
+- <http://fontsquirrel.com> free for commercial use
+- <http://skyfonts.com> new fonts for apps
+
+## Typography Reading
+- Thinking with Type
+- Element of Typographic Style
+- Just My Type
