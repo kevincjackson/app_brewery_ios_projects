@@ -141,13 +141,14 @@ protocol VolumeViewDelegate {
 
 // The "Child" View Controller
 class VolumeViewController: UIViewController {
-
+    
+    // Very important: this this class as the sender.
+    var delegate: VolumeViewDelegate?
+    
     @IBOutlet weak var volumeSlider: UISlider!
     
     var volume: Float = 0
-    
-    // Very important: this establishes the receiver
-    var delegate: VolumeViewDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,7 +157,7 @@ class VolumeViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
     
-        // Here the delegate is a message. 
+        // Here the delegate is sent a message. 
         delegate?.volumeDidFinishUpdating(level: volumeSlider!.value)
         dismiss(animated: true, completion: nil)
     }
