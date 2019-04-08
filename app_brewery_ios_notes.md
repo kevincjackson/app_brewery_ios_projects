@@ -90,18 +90,78 @@ No. VC's will tell you 5 people already have your idea and are working on it - i
 ## Delegation & Protocol Pattern
   - What: allows a child object to pass data to a parent object. It's a kind of OO lambda.
   - A major feature is that ObjectA and ObjectB contain references to each other, and do not perpetually create new objects. An inefficient alternative would be ObjectA passes data to new instance of ObjectB, and Object B then creates a new ObjectA upon return!
-  - How to implement:
-    - ObjectA *prepares_a_segue* for ObjectB, and instantiates the segue.destination as ObjectB controller and assigns itself as ObjectB's delegate
-    ```
-    let ObjectB = segue.destination as! ObjectBController
-ObjectB.delegate = self
+  - Example implementation: here a story board has two view controllers, MainViewController and VolumeViewController. Main has a label that shows the volume, and button which goes to the volume screen, using a segue called "gotoVolumeView". The volume screen has a volume slider, and done button.
+  
+  ```swift
+  // Main View Controller, the "Parent"
+  class MainViewController: UIViewController {
+
+    var currentVolume: Float = 5
+    @IBOutlet weak var volumeLabel: UILabel!
+    
+    // Goto volume view screen with the button is pressed
+    // performSegue() along with dismiss() are the main two methods opening and closing a modal type screen.
+    @IBAction func volumeButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "gotoVolumeView", sender: self)
+    }
+    
+    // prepare(for segue) is the main method used to set up the modal
+    // a UIStoryboardSegue is an object, whose main purpose is to hold a reference to the source and destination
+    // view controllers, in properties called source and destination.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoVolumeView" {
+        
+            // segue.destination has a type of UIViewController
+            // as! casts the view controller to our desired view controller
+            // without the case, we do not have access to our desired view controllers properties and methods.
+            let volumeVC = segue.destination as! VolumeViewController
+            
+            // delegation is a technique in which a reference is held to a sender and a receiver.
+            // here the reciever is being identified as self (this view controller)
+            volumeVC.delegate = self
+            
+            // notice we have access to the destination view controllers properties, as noted above.
+            volumeVC.volume = currentVolume
+        }
+    }
+}
+
+//  Here, main view controller satisfies the requirements of being a delegate
+extension MainViewController: VolumeViewDelegate {
+    func volumeDidFinishUpdating(level: Float) {
+        currentVolume = level
+        volumeLabel.text = String(currentVolume)
+    }
+}
+
+// A protocol is just a blue print. 
+protocol VolumeViewDelegate {
+    func volumeDidFinishUpdating(level: Float)
+}
+
+// The "Child" View Controller
+class VolumeViewController: UIViewController {
+
+    @IBOutlet weak var volumeSlider: UISlider!
+    
+    var volume: Float = 0
+    
+    // Very important: this establishes the receiver
+    var delegate: VolumeViewDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        volumeSlider.setValue(volume, animated: false)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    
+        // Here the delegate is a message. 
+        delegate?.volumeDidFinishUpdating(level: volumeSlider!.value)
+        dismiss(animated: true, completion: nil)
+    }
+}
   ```
-      Any data to be passed to be ObjectB gets assigned to ObjectB properties.
-    - ProtocolForB: contains a function(s) in which data can be passed in the methods. Think of the protocol as a lambda.
-    - ObjectB:
-      -Contains a delegate which is assigned as the optional ProtocolForB
-      -Whenever data needs to be passed ObjectB calls `delegate.protocal_method(data_to_be_passed)`
-      - ObjectB can `dismiss` itself, which automatically destroys itself, and sends the screen back to ObjectA
 
 ## Closure Syntax
 All are equivalent
